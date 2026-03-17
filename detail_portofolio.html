@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Project Details | E-commerce API Engine</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0da6f2",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <script>
+        function switchLanguage(lang) {
+            document.querySelectorAll('[data-en]').forEach(el => {
+                if (el.hasAttribute('data-' + lang)) {
+                    el.textContent = el.getAttribute('data-' + lang);
+                }
+            });
+            document.documentElement.lang = lang;
+        }
+    </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+    <div
+        class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- Top Navigation -->
+            <header
+                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-6 md:px-20 py-4">
+                <div class="flex items-center gap-4">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined text-3xl">terminal</span>
+                    </div>
+                    <h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em]">
+                        DevPortfolio</h2>
+                </div>
+                <div class="flex flex-1 justify-end gap-8">
+                    <div class="hidden md:flex items-center gap-9">
+                        <a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal"
+                            data-en="Projects" data-id="Proyek" href="#">Projects</a>
+                        <a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal"
+                            data-en="About" data-id="Tentang" href="#">About</a>
+                        <a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal"
+                            data-en="Contact" data-id="Kontak" href="#">Contact</a>
+                    </div>
+                    <div class="flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg p-1">
+                        <button
+                            class="px-2 py-1 text-xs font-bold rounded hover:bg-white dark:hover:bg-slate-700 transition-colors"
+                            onclick="switchLanguage('en')">EN</button>
+                        <span class="text-slate-400 mx-1">/</span>
+                        <button
+                            class="px-2 py-1 text-xs font-bold rounded hover:bg-white dark:hover:bg-slate-700 transition-colors"
+                            onclick="switchLanguage('id')">ID</button>
+                    </div><button
+                        class="flex items-center justify-center rounded-lg h-10 bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-100 px-3 hover:bg-primary/20 transition-all">
+                        <span class="material-symbols-outlined">code</span>
+                    </button>
+                </div>
+            </header>
+            <main class="flex-1 max-w-[960px] mx-auto w-full px-6 py-10">
+                <!-- Hero Image Section -->
+                <div class="@container">
+                    <div class="pb-6">
+                        <div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden rounded-xl min-h-[400px] border border-slate-200 dark:border-slate-800 shadow-2xl shadow-primary/5"
+                            data-alt="Modern server room with blue data lights neon"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCJ_5LrpkNOAc0T5hL4BIyu5nEju5OoDNZ6zq7ta9kycK_PJRaj-MEOvXxOLVfhTDj-OUT0nR_tZk_YGeNqPILqWXK6mO5EvaefHipIbEYeDrKNzY1d-MqBEHnZPKyu7a0M_UruO4msOJjqSC7O9R-09088ZWA-0BeN_qUIaYZ7K5xu25AsYQNO0vsr4nXSH4jpL6L6gM5RR6y5D8E_PrVNJZbQpdmZPZVALjZat7HkgnsAJqk7XG_-nY1dnbrCtMn6U_50z8gdcRc");'>
+                        </div>
+                    </div>
+                </div>
+                <!-- Title and Header Info -->
+                <div class="flex flex-wrap justify-between items-start gap-4 py-4">
+                    <div class="flex flex-col gap-2">
+                        <div
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20 w-fit">
+                            Backend Focused
+                        </div>
+                        <h1 class="text-slate-900 dark:text-white text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]"
+                            data-en="E-commerce API Engine" data-id="Mesin API E-commerce">E-commerce API Engine</h1>
+                        <p class="text-slate-500 dark:text-slate-400 text-lg"
+                            data-en="High-performance transactional backend architecture"
+                            data-id="Arsitektur backend transaksional berkinerja tinggi">High-performance transactional
+                            backend architecture</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <button
+                            class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-12 px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:brightness-110 transition-all">
+                            <span class="truncate" data-en="Live Demo" data-id="Demo Langsung">Live Demo</span>
+                        </button>
+                        <button
+                            class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-12 px-5 bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-slate-300 dark:hover:bg-slate-700 transition-all">
+                            <span class="truncate" data-en="View GitHub" data-id="Lihat GitHub">View GitHub</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-10">
+                    <!-- Main Description and Features -->
+                    <div class="md:col-span-2 space-y-10">
+                        <section>
+                            <h2 class="text-slate-900 dark:text-white text-2xl font-bold mb-4 flex items-center gap-2"
+                                data-en="Project Overview" data-id="Ikhtisar Proyek">
+                                <span class="material-symbols-outlined text-primary">description</span>
+                                Project Overview
+                            </h2>
+                            <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed"
+                                data-en="A high-performance, scalable RESTful API built to handle thousands of concurrent transactions for modern e-commerce platforms. This project focuses on database optimization, distributed caching strategies, and secure payment integrations. It was designed with a microservices-ready architecture, ensuring horizontal scalability and fault tolerance."
+                                data-id="API RESTful berkinerja tinggi dan skalabel yang dibangun untuk menangani ribuan transaksi bersamaan untuk platform e-commerce modern. Proyek ini berfokus pada optimasi database, strategi caching terdistribusi, dan integrasi pembayaran yang aman. Ini dirancang dengan arsitektur siap layanan mikro (microservices), memastikan skalabilitas horizontal dan toleransi kesalahan.">
+                                A high-performance, scalable RESTful API built to handle thousands of concurrent
+                                transactions for modern e-commerce platforms. This project focuses on database
+                                optimization, distributed caching strategies, and secure payment integrations. It was
+                                designed with a microservices-ready architecture, ensuring horizontal scalability and
+                                fault tolerance.
+                            </p>
+                        </section>
+                        <section>
+                            <h2 class="text-slate-900 dark:text-white text-2xl font-bold mb-6 flex items-center gap-2"
+                                data-en="Key Features" data-id="Fitur Utama">
+                                <span class="material-symbols-outlined text-primary">list_alt</span>
+                                Key Features
+                            </h2>
+                            <ul class="grid grid-cols-1 gap-4">
+                                <li
+                                    class="flex items-start gap-3 p-4 rounded-lg bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+                                    <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 dark:text-slate-100"
+                                            data-en="Distributed Lock System" data-id="Sistem Penguncian Terdistribusi">
+                                            Distributed Lock System</h4>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400"
+                                            data-en="Prevents race conditions during flash sales using Redis-based locking mechanisms."
+                                            data-id="Mencegah kondisi balapan (race conditions) selama obral kilat menggunakan mekanisme penguncian berbasis Redis.">
+                                            Prevents race conditions during flash sales using Redis-based locking
+                                            mechanisms.</p>
+                                    </div>
+                                </li>
+                                <li
+                                    class="flex items-start gap-3 p-4 rounded-lg bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+                                    <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 dark:text-slate-100"
+                                            data-en="Optimized Schema Design" data-id="Desain Skema yang Dioptimalkan">
+                                            Optimized Schema Design</h4>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400"
+                                            data-en="PostgreSQL indexing and partitioning for lightning-fast product searches and order history."
+                                            data-id="Pengindeksan dan pemartisian PostgreSQL untuk pencarian produk dan riwayat pesanan secepat kilat.">
+                                            PostgreSQL indexing and partitioning for lightning-fast product searches and
+                                            order history.</p>
+                                    </div>
+                                </li>
+                                <li
+                                    class="flex items-start gap-3 p-4 rounded-lg bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+                                    <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 dark:text-slate-100"
+                                            data-en="Real-time Analytics" data-id="Analitik Real-time">Real-time
+                                            Analytics</h4>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400"
+                                            data-en="Integrated event stream processing for monitoring sales trends and inventory levels."
+                                            data-id="Pemrosesan aliran peristiwa terintegrasi untuk memantau tren penjualan dan tingkat inventaris.">
+                                            Integrated event stream processing for monitoring sales trends and inventory
+                                            levels.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                    <!-- Sidebar Info: Tech Stack -->
+                    <div class="space-y-8">
+                        <section
+                            class="p-6 rounded-xl bg-slate-100 dark:bg-slate-800/30 border border-slate-200 dark:border-slate-800">
+                            <h2 class="text-slate-900 dark:text-white text-xl font-bold mb-6 flex items-center gap-2"
+                                data-en="Tech Stack" data-id="Teknologi">
+                                <span class="material-symbols-outlined text-primary">stack</span>
+                                Tech Stack
+                            </h2>
+                            <div class="flex flex-col gap-6">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="size-12 flex items-center justify-center rounded-lg bg-primary/10 text-primary">
+                                        <span class="material-symbols-outlined text-3xl">api</span>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-slate-900 dark:text-white">NestJS</p>
+                                        <p class="text-xs text-slate-500 uppercase tracking-wider" data-en="Framework"
+                                            data-id="Kerangka Kerja">Framework</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="size-12 flex items-center justify-center rounded-lg bg-primary/10 text-primary">
+                                        <span class="material-symbols-outlined text-3xl">database</span>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-slate-900 dark:text-white">PostgreSQL</p>
+                                        <p class="text-xs text-slate-500 uppercase tracking-wider" data-en="Primary DB"
+                                            data-id="Database Utama">Primary DB</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="size-12 flex items-center justify-center rounded-lg bg-primary/10 text-primary">
+                                        <span class="material-symbols-outlined text-3xl">bolt</span>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-slate-900 dark:text-white">Redis</p>
+                                        <p class="text-xs text-slate-500 uppercase tracking-wider"
+                                            data-en="High-performance transactional backend architecture"
+                                            data-id="Arsitektur backend transaksional berkinerja tinggi">Caching/MQ</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="p-6 rounded-xl border border-dashed border-slate-300 dark:border-slate-700">
+                            <h3 class="text-sm font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-4"
+                                data-en="Project Metrics" data-id="Metrik Proyek">Project Metrics</h3>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-slate-500" data-en="Coverage"
+                                        data-id="Cakupan Tes">Coverage</span>
+                                    <span class="text-sm font-mono text-primary font-bold">94%</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-slate-500" data-en="Latency"
+                                        data-id="Latensi">Latency</span>
+                                    <span class="text-sm font-mono text-primary font-bold">&lt;120ms</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-slate-500" data-en="Availability"
+                                        data-id="Ketersediaan">Availability</span>
+                                    <span class="text-sm font-mono text-primary font-bold">99.9%</span>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </main>
+            <footer class="border-t border-slate-200 dark:border-slate-800 py-10 mt-10">
+                <div class="max-w-[960px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">terminal</span>
+                        <span class="font-bold text-slate-900 dark:text-white">DevPortfolio</span>
+                    </div>
+                    <p class="text-sm text-slate-500"
+                        data-en="© 2024 Built with NestJS and Tailwind CSS. All rights reserved."
+                        data-id="© 2024 Dibuat dengan NestJS dan Tailwind CSS. Seluruh hak cipta dilindungi.">© 2024
+                        Built with NestJS and Tailwind CSS. All rights reserved.</p>
+                    <div class="flex gap-4">
+                        <a class="text-slate-400 hover:text-primary transition-colors" href="#"><span
+                                class="material-symbols-outlined">alternate_email</span></a>
+                        <a class="text-slate-400 hover:text-primary transition-colors" href="#"><span
+                                class="material-symbols-outlined">account_circle</span></a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

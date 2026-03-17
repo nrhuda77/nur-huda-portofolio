@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Project Details | Web Profile Clinic Ibnu Sina</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simple-icons-font@v9/font/simple-icons.min.css" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0da6f2",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <script>
+        function switchLanguage(lang) {
+            document.querySelectorAll('[data-en]').forEach(el => {
+                if (el.hasAttribute('data-' + lang)) {
+                    el.textContent = el.getAttribute('data-' + lang);
+                }
+            });
+            document.documentElement.lang = lang;
+        }
+    </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+    <div
+        class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- Top Navigation -->
+            <header
+                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-6 md:px-10 py-4 max-w-7xl mx-auto w-full">
+                <div class="flex items-center gap-3">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined text-3xl">terminal</span>
+                    </div>
+                    <h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">Nur
+                        Huda</h2>
+                </div>
+                <div class="flex flex-1 justify-end gap-8">
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors"
+                            href="index.html">Home</a>
+                        <a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors"
+                            href="about.html">About</a>
+                        <a class="text-primary text-sm font-semibold underline underline-offset-8 decoration-2"
+                            href="portofilio.html">Projects</a>
+                        <a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors"
+                            href="#">Contact</a>
+                    </nav>
+                    <button
+                        class="flex items-center justify-center rounded-lg h-10 px-3 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold hover:border-primary hover:text-primary transition-all mr-2"
+                        id="lang-toggle">UBAH BAHASA INDONESIA</button>
+                    <button
+                        class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold tracking-wide shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+                        <span>Hire Me</span>
+                    </button>
+                </div>
+            </header>
+            <main class="flex-1 max-w-[960px] mx-auto w-full px-6 py-10">
+                <!-- Hero Image Section -->
+                <div class="@container">
+                    <div class="pb-6">
+                        <div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden rounded-xl min-h-[400px] border border-slate-200 dark:border-slate-800 shadow-2xl shadow-primary/5"
+                            data-alt="Modern server room with blue data lights neon"
+                            style="background-image: url('../assets/web-profile-ibnusina.png');">
+                        </div>
+                    </div>
+                </div>
+                <!-- Title and Header Info -->
+                <div class="flex flex-wrap justify-between items-start gap-4 py-4">
+                    <div class="flex flex-col gap-2">
+                        <div
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20 w-fit">
+                            Backend Focused
+                        </div>
+                        <h1 class="text-slate-900 dark:text-white text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]"
+                            data-en="Web Profile Clinic Ibnu Sina" data-id="Web Profile Klinik Ibnu Sina">Web
+                            Profile Clinic Ibnu Sina</h1>
+                        <p class=" text-slate-500 dark:text-slate-400 text-lg"
+                            data-en="A scalable ERP backend built with Laravel and MySQL" data-id="Sistem ERP berbasis Laravel dan
+                            MySQL yang scalable">A scalable ERP backend built with Laravel and MySQL</p>
+                    </div>
+                    <!-- <div class="flex gap-3">
+                        <button
+                            class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-12 px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:brightness-110 transition-all">
+                            <span class="truncate" data-en="Live Demo" data-id="Demo Langsung">Live Demo</span>
+                        </button>
+                        <button
+                            class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-12 px-5 bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-slate-300 dark:hover:bg-slate-700 transition-all">
+                            <span class="truncate" data-en="View GitHub" data-id="Lihat GitHub">View GitHub</span>
+                        </button>
+                    </div> -->
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-10">
+                    <!-- Main Description and Features -->
+                    <div class="md:col-span-2 space-y-10">
+                        <section>
+                            <h2 class="text-slate-900 dark:text-white text-2xl font-bold mb-4 flex items-center gap-2"
+                                data-en="Project Overview" data-id="Ikhtisar Proyek">
+                                <span class="material-symbols-outlined text-primary">description</span>
+                                Project Overview
+                            </h2>
+                            <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed"
+                                data-en="The Ibnu Sina Clinic profile website is developed to provide comprehensive information about healthcare services to the public. This website serves as the main information platform, displaying the clinic profile, location, and doctors’ schedules in a structured and easily accessible manner.
+
+Through an informative landing page, users can quickly explore available services and regularly updated doctor schedules. The system also supports doctor schedule management using an Excel template within a single file containing three separate sheets (general practitioners, dentists, and specialists), making it easier to update data without manual entry.
+
+Technically, this website is built using Laravel as the backend, MySQL as the database, and Bootstrap for a responsive and user-friendly interface." data-id="   website profile klinik Ibnu Sina yang dikembangkan untuk menyediakan informasi lengkap
+                                terkait
+                                layanan kesehatan kepada masyarakat. Website ini berfungsi sebagai media informasi utama
+                                yang menampilkan profil klinik, alamat, serta jadwal praktik dokter secara terstruktur
+                                dan mudah diakses.
+                        
+                                Melalui landing page yang informatif, pengguna dapat dengan cepat mengetahui layanan
+                                yang tersedia serta jadwal dokter yang diperbarui secara berkala. Sistem ini juga
+                                mendukung pengelolaan jadwal dokter berbasis template Excel dalam satu file dengan tiga
+                                sheet terpisah (dokter umum, dokter gigi, dan dokter spesialis), sehingga memudahkan
+                                proses update data tanpa perlu input manual satu per satu.
+                        
+                                Secara teknis, website ini dibangun menggunakan Laravel sebagai backend, MySQL sebagai
+                                database, dan Bootstrap untuk tampilan antarmuka yang responsif dan user-friendly ">
+                                website profile klinik Ibnu Sina yang dikembangkan untuk menyediakan informasi lengkap
+                                terkait
+                                layanan kesehatan kepada masyarakat. Website ini berfungsi sebagai media informasi utama
+                                yang menampilkan profil klinik, alamat, serta jadwal praktik dokter secara terstruktur
+                                dan mudah diakses.
+                                <br><br>
+                                Melalui landing page yang informatif, pengguna dapat dengan cepat mengetahui layanan
+                                yang tersedia serta jadwal dokter yang diperbarui secara berkala. Sistem ini juga
+                                mendukung pengelolaan jadwal dokter berbasis template Excel dalam satu file dengan tiga
+                                sheet terpisah (dokter umum, dokter gigi, dan dokter spesialis), sehingga memudahkan
+                                proses update data tanpa perlu input manual satu per satu.
+                                <br><br>
+                                Secara teknis, website ini dibangun menggunakan Laravel sebagai backend, MySQL sebagai
+                                database, dan Bootstrap untuk tampilan antarmuka yang responsif dan user-friendly.
+                            </p>
+                        </section>
+                        <section>
+                            <h2 class="text-slate-900 dark:text-white text-2xl font-bold mb-6 flex items-center gap-2"
+                                data-en="Key Features" data-id="Fitur Utama">
+                                <span class="material-symbols-outlined text-primary">list_alt</span>
+                                Key Features
+                            </h2>
+                            <ul class="grid grid-cols-1 gap-4">
+                                <li
+                                    class="flex items-start gap-3 p-4 rounded-lg bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+                                    <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 dark:text-slate-100"
+                                            data-en="Clinic Information Landing Page"
+                                            data-id="Landing Page Informasi Klinik">
+                                            Clinic Information Landing Page</h4>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400"
+                                            data-en="Displays the clinic profile, address, and complete service information"
+                                            data-id="Menampilkan profil klinik, alamat, dan informasi layanan secara lengkap">
+                                            Displays the clinic profile, address, and complete service information.</p>
+                                    </div>
+                                </li>
+                                <li
+                                    class="flex items-start gap-3 p-4 rounded-lg bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+                                    <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 dark:text-slate-100"
+                                            data-en="Integrated Doctor Schedule" data-id="Jadwal Dokter Terintegrasi">
+                                            Integrated Doctor Schedule</h4>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400" data-en="Provides schedules for general practitioners, dentists, and specialists in a single structured view.
+" data-id="Menyediakan jadwal dokter umum, dokter gigi, dan dokter spesialis dalam satu tampilan yang terstruktur">
+                                            Provides schedules for general practitioners, dentists, and specialists in a
+                                            single structured view.
+                                        </p>
+                                    </div>
+                                </li>
+
+
+
+                            </ul>
+                        </section>
+                    </div>
+                    <!-- Sidebar Info: Tech Stack -->
+                    <div class="space-y-8">
+                        <section
+                            class="p-6 rounded-xl bg-slate-100 dark:bg-slate-800/30 border border-slate-200 dark:border-slate-800">
+                            <h2 class="text-slate-900 dark:text-white text-xl font-bold mb-6 flex items-center gap-2"
+                                data-en="Tech Stack" data-id="Teknologi">
+                                <span class="material-symbols-outlined text-primary">stack</span>
+                                Tech Stack
+                            </h2>
+                            <div class="flex flex-col gap-6">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="size-12 flex items-center justify-center rounded-lg bg-primary/10 text-primary">
+                                        <i class="si si-laravel text-red-600 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-slate-900 dark:text-white">Laravel</p>
+                                        <p class="text-xs text-slate-500 uppercase tracking-wider" data-en="Framework"
+                                            data-id="Kerangka Kerja">Framework</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="size-12 flex items-center justify-center rounded-lg bg-primary/10 text-primary">
+                                        <span class="material-symbols-outlined text-3xl">database</span>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-slate-900 dark:text-white">MySQL</p>
+                                        <p class="text-xs text-slate-500 uppercase tracking-wider" data-en="Primary DB"
+                                            data-id="Database Utama">Primary DB</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="size-12 flex items-center justify-center rounded-lg bg-primary/10 text-primary">
+                                        <i class="si si-bootstrap text-blue-600 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-slate-900 dark:text-white">Bootsrap</p>
+                                        <p class="text-xs text-slate-500 uppercase tracking-wider" data-en="Bootsrap"
+                                            data-id="Bootsrap">Bootsrap</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- <section class="p-6 rounded-xl border border-dashed border-slate-300 dark:border-slate-700">
+                            <h3 class="text-sm font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-4"
+                                data-en="Project Metrics" data-id="Metrik Proyek">Project Metrics</h3>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-slate-500" data-en="Coverage"
+                                        data-id="Cakupan Tes">Coverage</span>
+                                    <span class="text-sm font-mono text-primary font-bold">94%</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-slate-500" data-en="Latency"
+                                        data-id="Latensi">Latency</span>
+                                    <span class="text-sm font-mono text-primary font-bold">&lt;120ms</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-slate-500" data-en="Availability"
+                                        data-id="Ketersediaan">Availability</span>
+                                    <span class="text-sm font-mono text-primary font-bold">99.9%</span>
+                                </div>
+                            </div>
+                        </section> -->
+                    </div>
+                </div>
+            </main>
+            <footer class="border-t border-slate-200 dark:border-slate-800 py-10 mt-10">
+                <div class="max-w-[960px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">terminal</span>
+                        <span class="font-bold text-slate-900 dark:text-white">DevPortfolio</span>
+                    </div>
+                    <p class="text-sm text-slate-500"
+                        data-en="© 2024 Built with NestJS and Tailwind CSS. All rights reserved."
+                        data-id="© 2024 Dibuat dengan NestJS dan Tailwind CSS. Seluruh hak cipta dilindungi.">© 2024
+                        Built with NestJS and Tailwind CSS. All rights reserved.</p>
+                    <div class="flex gap-4">
+                        <a class="text-slate-400 hover:text-primary transition-colors" href="#"><span
+                                class="material-symbols-outlined">alternate_email</span></a>
+                        <a class="text-slate-400 hover:text-primary transition-colors" href="#"><span
+                                class="material-symbols-outlined">account_circle</span></a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    // Language Toggle Logic
+    const langToggle = document.getElementById('lang-toggle');
+    let currentLang = 'en';
+
+    langToggle.addEventListener('click', () => {
+
+        currentLang = currentLang === 'en' ? 'id' : 'en';
+
+        // ubah teks tombol
+        langToggle.textContent = currentLang === 'en'
+            ? 'UBAH BAHASA INDONESIA'
+            : 'CHANGE TO ENGLISH';
+
+        document.querySelectorAll('[data-en][data-id]').forEach(el => {
+            el.textContent = el.getAttribute(`data-${currentLang}`);
+        });
+
+    }); 
+</script>

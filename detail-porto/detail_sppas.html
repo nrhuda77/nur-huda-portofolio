@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Project Details | Pelita Air Trade Union</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simple-icons-font@v9/font/simple-icons.min.css" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0da6f2",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <script>
+        function switchLanguage(lang) {
+            document.querySelectorAll('[data-en]').forEach(el => {
+                if (el.hasAttribute('data-' + lang)) {
+                    el.textContent = el.getAttribute('data-' + lang);
+                }
+            });
+            document.documentElement.lang = lang;
+        }
+    </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+    <div
+        class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- Top Navigation -->
+            <header
+                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-6 md:px-10 py-4 max-w-7xl mx-auto w-full">
+                <div class="flex items-center gap-3">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined text-3xl">terminal</span>
+                    </div>
+                    <h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">Nur
+                        Huda</h2>
+                </div>
+                <div class="flex flex-1 justify-end gap-8">
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors"
+                            href="index.html">Home</a>
+                        <a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors"
+                            href="about.html">About</a>
+                        <a class="text-primary text-sm font-semibold underline underline-offset-8 decoration-2"
+                            href="portofilio.html">Projects</a>
+                        <a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors"
+                            href="#">Contact</a>
+                    </nav>
+                    <button
+                        class="flex items-center justify-center rounded-lg h-10 px-3 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold hover:border-primary hover:text-primary transition-all mr-2"
+                        id="lang-toggle">UBAH BAHASA INDONESIA</button>
+                    <button
+                        class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold tracking-wide shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+                        <span>Hire Me</span>
+                    </button>
+                </div>
+            </header>
+            <main class="flex-1 max-w-[960px] mx-auto w-full px-6 py-10">
+                <!-- Hero Image Section -->
+                <div class="@container">
+                    <div class="pb-6">
+                        <div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden rounded-xl min-h-[400px] border border-slate-200 dark:border-slate-800 shadow-2xl shadow-primary/5"
+                            data-alt="Modern server room with blue data lights neon"
+                            style="background-image: url('../assets/sppas.png');">
+                        </div>
+                    </div>
+                </div>
+                <!-- Title and Header Info -->
+                <div class="flex flex-wrap justify-between items-start gap-4 py-4">
+                    <div class="flex flex-col gap-2">
+                        <div
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20 w-fit">
+                            Backend Focused
+                        </div>
+                        <h1 class="text-slate-900 dark:text-white text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]"
+                            data-en="Pelita Air Trade Union" data-id="Serikat Kerja Pelita Air (SPPAS)">Pelita Air Trade
+                            Union</h1>
+                        <p class=" text-slate-500 dark:text-slate-400 text-lg"
+                            data-en="A scalable ERP backend built with Laravel and MySQL" data-id="Sistem ERP berbasis Laravel dan
+                            MySQL yang scalable">A scalable ERP backend built with Laravel and MySQL</p>
+                    </div>
+                    <!-- <div class="flex gap-3">
+                        <button
+                            class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-12 px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:brightness-110 transition-all">
+                            <span class="truncate" data-en="Live Demo" data-id="Demo Langsung">Live Demo</span>
+                        </button>
+                        <button
+                            class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-12 px-5 bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-slate-300 dark:hover:bg-slate-700 transition-all">
+                            <span class="truncate" data-en="View GitHub" data-id="Lihat GitHub">View GitHub</span>
+                        </button>
+                    </div> -->
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-10">
+                    <!-- Main Description and Features -->
+                    <div class="md:col-span-2 space-y-10">
+                        <section>
+                            <h2 class="text-slate-900 dark:text-white text-2xl font-bold mb-4 flex items-center gap-2"
+                                data-en="Project Overview" data-id="Ikhtisar Proyek">
+                                <span class="material-symbols-outlined text-primary">description</span>
+                                Project Overview
+                            </h2>
+                            <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed"
+                                data-en="SPPAS (Serikat Pekerja Pelita Air Service) is a web-based application developed to support labor union activities in a digital and integrated manner. The application provides a platform for members to access information, submit aspirations, and participate in various organizational activities more easily and transparently.
+
+SPPAS features a landing page as an information and recruitment medium, along with an authentication system that allows members to access core functionalities. Members can submit reports regarding inappropriate policies, attach evidence such as images, videos, and documents, and monitor financial transparency as well as organizational agendas.
+
+Technically, the application is built using Laravel and MySQL, with email notification support for important activities. The system also supports document generation and distribution in PDF format, including employment agreements that can be automatically watermarked with the member’s name. In addition, financial reports can be managed using uploaded Excel templates, simplifying administrative and reporting processes"
+                                data-id="SPPAS (Serikat Pekerja Pelita Air Service) merupakan aplikasi berbasis web yang dikembangkan untuk mendukung aktivitas organisasi serikat pekerja secara digital dan terintegrasi. Aplikasi ini menyediakan platform bagi anggota untuk mengakses informasi, menyampaikan aspirasi, serta mengikuti berbagai kegiatan organisasi dengan lebih mudah dan transparan. 
+
+SPPAS dilengkapi dengan landing page sebagai media informasi dan ajakan bergabung, serta sistem autentikasi bagi anggota untuk mengakses fitur utama. Anggota dapat membuat laporan terkait kebijakan yang tidak sesuai, melampirkan bukti berupa gambar, video, maupun dokumen, serta memantau transparansi keuangan kas organisasi dan agenda kegiatan yang tersedia.
+
+Secara teknis, aplikasi ini dibangun menggunakan Laravel dan MySQL dengan dukungan notifikasi email untuk setiap aktivitas penting. Sistem juga mendukung pembuatan dan distribusi dokumen dalam format PDF, termasuk surat perjanjian kerja yang dapat diberi watermark nama anggota secara otomatis. Selain itu, laporan keuangan dapat dikelola menggunakan template Excel yang diunggah, sehingga memudahkan proses administrasi dan pelaporan">
+                                SPPAS (Serikat Pekerja Pelita Air Service) is a web-based application developed to
+                                support labor union activities in a digital and integrated manner. The application
+                                provides a platform for members to access information, submit aspirations, and
+                                participate in various organizational activities more easily and transparently.
+                                <br><br>
+                                SPPAS features a landing page as an information and recruitment medium, along with an
+                                authentication system that allows members to access core functionalities. Members can
+                                submit reports regarding inappropriate policies, attach evidence such as images, videos,
+                                and documents, and monitor financial transparency as well as organizational agendas.
+                                <br><br>
+                                Technically, the application is built using Laravel and MySQL, with email notification
+                                support for important activities. The system also supports document generation and
+                                distribution in PDF format, including employment agreements that can be automatically
+                                watermarked with the member’s name. In addition, financial reports can be managed using
+                                uploaded Excel templates, simplifying administrative and reporting processes
+                            </p>
+                        </section>
+                        <section>
+                            <h2 class="text-slate-900 dark:text-white text-2xl font-bold mb-6 flex items-center gap-2"
+                                data-en="Key Features" data-id="Fitur Utama">
+                                <span class="material-symbols-outlined text-primary">list_alt</span>
+                                Key Features
+                            </h2>
+                            <ul class="grid grid-cols-1 gap-4">
+                                <li
+                                    class="flex items-start gap-3 p-4 rounded-lg bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+                                    <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 dark:text-slate-100"
+                                            data-en="Ship Pilotage Operational Management"
+                                            data-id="Manajemen Operasional Pemanduan">
+                                            Ship Pilotage Operational Management</h4>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400"
+                                            data-en="Management of SPK, Form A21 Captain, pilotage realization, and RPKRO submission in one integrated system."
+                                            data-id="Pengelolaan SPK, Form A21 Kapten, realisasi pandu, dan pengajuan RPKRO dalam satu sistem terintegrasi">
+                                            Management of SPK, Form A21 Captain, pilotage realization, and RPKRO
+                                            submission in one integrated system.</p>
+                                    </div>
+                                </li>
+                                <li
+                                    class="flex items-start gap-3 p-4 rounded-lg bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+                                    <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 dark:text-slate-100"
+                                            data-en="Automated Document Generation" data-id="Generate Dokumen Otomatis">
+                                            Automated Document Generation</h4>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400"
+                                            data-en="Automatic generation of invoices and pranota in PDF format"
+                                            data-id="Pembuatan invoice dan pranota dalam format PDF secara otomatis">
+                                            Automatic generation of invoices and pranota in PDF format</p>
+                                    </div>
+                                </li>
+                                <li
+                                    class="flex items-start gap-3 p-4 rounded-lg bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+                                    <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 dark:text-slate-100"
+                                            data-en="Landing Page & Recruitment" data-id="Landing Page & Recruitment">
+                                            Landing Page & Recruitment
+                                        </h4>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400"
+                                            data-en="An information page and recruitment platform to invite prospective labor union members to join"
+                                            data-id="Halaman informasi dan ajakan bergabung untuk calon anggota serikat pekerja">
+                                            An information page and recruitment platform to invite prospective labor
+                                            union members to join</p>
+                                    </div>
+                                </li>
+
+                                <li
+                                    class="flex items-start gap-3 p-4 rounded-lg bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+                                    <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 dark:text-slate-100"
+                                            data-en="Policy Reporting" data-id="Pelaporan Kebijakan">Policy Reporting
+                                        </h4>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400"
+                                            data-en="Members can submit reports regarding inappropriate policies, complete with evidence uploads (images, videos, and documents)."
+                                            data-id="Anggota dapat membuat laporan terkait kebijakan yang tidak sesuai, lengkap dengan upload bukti (gambar, video, dokumen)">
+                                            Members can submit reports regarding inappropriate policies, complete with
+                                            evidence uploads (images, videos, and documents).</p>
+                                    </div>
+                                </li>
+
+                                <li
+                                    class="flex items-start gap-3 p-4 rounded-lg bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+                                    <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 dark:text-slate-100"
+                                            data-en="Notifikasi Email" data-id="Notifikasi Email">Notifikasi Email</h4>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400"
+                                            data-en="Email integration for activity notifications such as member approvals, reports, and events"
+                                            data-id="Integrasi email untuk pemberitahuan aktivitas seperti approval anggota, laporan, dan event">
+                                            Email integration for activity notifications such as member approvals,
+                                            reports, and events</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                    <!-- Sidebar Info: Tech Stack -->
+                    <div class="space-y-8">
+                        <section
+                            class="p-6 rounded-xl bg-slate-100 dark:bg-slate-800/30 border border-slate-200 dark:border-slate-800">
+                            <h2 class="text-slate-900 dark:text-white text-xl font-bold mb-6 flex items-center gap-2"
+                                data-en="Tech Stack" data-id="Teknologi">
+                                <span class="material-symbols-outlined text-primary">stack</span>
+                                Tech Stack
+                            </h2>
+                            <div class="flex flex-col gap-6">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="size-12 flex items-center justify-center rounded-lg bg-primary/10 text-primary">
+                                        <i class="si si-laravel text-red-600 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-slate-900 dark:text-white">Laravel</p>
+                                        <p class="text-xs text-slate-500 uppercase tracking-wider" data-en="Framework"
+                                            data-id="Kerangka Kerja">Framework</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="size-12 flex items-center justify-center rounded-lg bg-primary/10 text-primary">
+                                        <span class="material-symbols-outlined text-3xl">database</span>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-slate-900 dark:text-white">MySQL</p>
+                                        <p class="text-xs text-slate-500 uppercase tracking-wider" data-en="Primary DB"
+                                            data-id="Database Utama">Primary DB</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="size-12 flex items-center justify-center rounded-lg bg-primary/10 text-primary">
+                                        <span class="material-symbols-outlined text-3xl">mail</span>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-slate-900 dark:text-white">Integration Email</p>
+                                        <p class="text-xs text-slate-500 uppercase tracking-wider"
+                                            data-en="Integration Email" data-id="Integrasi Email">Integration Email</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="p-6 rounded-xl border border-dashed border-slate-300 dark:border-slate-700">
+                            <h3 class="text-sm font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-4"
+                                data-en="Project Metrics" data-id="Metrik Proyek">Project Metrics</h3>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-slate-500" data-en="Coverage"
+                                        data-id="Cakupan Tes">Coverage</span>
+                                    <span class="text-sm font-mono text-primary font-bold">94%</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-slate-500" data-en="Latency"
+                                        data-id="Latensi">Latency</span>
+                                    <span class="text-sm font-mono text-primary font-bold">&lt;120ms</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-slate-500" data-en="Availability"
+                                        data-id="Ketersediaan">Availability</span>
+                                    <span class="text-sm font-mono text-primary font-bold">99.9%</span>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </main>
+            <footer class="border-t border-slate-200 dark:border-slate-800 py-10 mt-10">
+                <div class="max-w-[960px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">terminal</span>
+                        <span class="font-bold text-slate-900 dark:text-white">DevPortfolio</span>
+                    </div>
+                    <p class="text-sm text-slate-500"
+                        data-en="© 2024 Built with NestJS and Tailwind CSS. All rights reserved."
+                        data-id="© 2024 Dibuat dengan NestJS dan Tailwind CSS. Seluruh hak cipta dilindungi.">© 2024
+                        Built with NestJS and Tailwind CSS. All rights reserved.</p>
+                    <div class="flex gap-4">
+                        <a class="text-slate-400 hover:text-primary transition-colors" href="#"><span
+                                class="material-symbols-outlined">alternate_email</span></a>
+                        <a class="text-slate-400 hover:text-primary transition-colors" href="#"><span
+                                class="material-symbols-outlined">account_circle</span></a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    // Language Toggle Logic
+    const langToggle = document.getElementById('lang-toggle');
+    let currentLang = 'en';
+
+    langToggle.addEventListener('click', () => {
+
+        currentLang = currentLang === 'en' ? 'id' : 'en';
+
+        // ubah teks tombol
+        langToggle.textContent = currentLang === 'en'
+            ? 'UBAH BAHASA INDONESIA'
+            : 'CHANGE TO ENGLISH';
+
+        document.querySelectorAll('[data-en][data-id]').forEach(el => {
+            el.textContent = el.getAttribute(`data-${currentLang}`);
+        });
+
+    }); 
+</script>

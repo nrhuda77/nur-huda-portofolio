@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries">
+        const filterButtons = document.querySelectorAll('[data-filter]');
+        const projectCards = document.querySelectorAll('[data-category]');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('bg-primary', 'text-white', 'shadow-lg', 'shadow-primary/20');
+                    btn.classList.add('bg-transparent', 'border', 'border-slate-200', 'dark:border-slate-800', 'text-slate-600', 'dark:text-slate-400');
+                });
+                button.classList.add('bg-primary', 'text-white', 'shadow-lg', 'shadow-primary/20');
+                button.classList.remove('bg-transparent', 'border', 'border-slate-200', 'dark:border-slate-800', 'text-slate-600', 'dark:text-slate-400');
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+
+
+        const langToggle = document.getElementById('lang-toggle');
+        let currentLang = 'en';
+
+        langToggle.addEventListener('click', () => {
+
+            currentLang = currentLang === 'en' ? 'id' : 'en';
+
+            // ubah teks tombol
+            langToggle.textContent = currentLang === 'en'
+                ? 'UBAH BAHASA INDONESIA'
+                : 'CHANGE TO ENGLISH';
+
+            document.querySelectorAll('[data-en][data-id]').forEach(el => {
+                el.textContent = el.getAttribute(`data-${currentLang}`);
+            });
+
+        });
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0da6f2",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <title>Nur Huda - Projects Showcase</title>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- Navigation -->
+
+
+            <header
+                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-6 md:px-10 py-4 max-w-7xl mx-auto w-full">
+                <div class="flex items-center gap-3">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined text-3xl">terminal</span>
+                    </div>
+                    <h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">Nur
+                        Huda</h2>
+                </div>
+                <div class="flex flex-1 justify-end gap-8">
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors"
+                            href="index.html">Home</a>
+                        <a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors"
+                            href="about.html">About</a>
+                        <a class="text-primary text-sm font-semibold underline underline-offset-8 decoration-2"
+                            href="portofilio.html">Projects</a>
+                        <a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors"
+                            href="#">Contact</a>
+                    </nav>
+                    <button
+                        class="flex items-center justify-center rounded-lg h-10 px-3 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold hover:border-primary hover:text-primary transition-all mr-2"
+                        id="lang-toggle">UBAH BAHASA INDONESIA</button>
+                    <button
+                        class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold tracking-wide shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+                        <span>Hire Me</span>
+                    </button>
+                </div>
+            </header>
+            <main class="flex-1 max-w-[1200px] mx-auto w-full px-6 py-12 lg:py-20">
+                <!-- Hero Section for Projects -->
+                <div class="flex flex-col gap-4 mb-16">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 w-fit">
+                        <span class="material-symbols-outlined text-primary text-sm">code</span>
+                        <span class="text-primary text-xs font-bold uppercase tracking-widest">Portfolio</span>
+                    </div>
+                    <h1
+                        class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-slate-900 dark:text-white max-w-2xl">
+                        <span data-en="Featured Engineering" data-id="Proyek Rekayasa">Featured Engineering</span> <span
+                            class="text-primary" data-en="Projects" data-id="Unggulan">Projects</span>
+                    </h1>
+                    <p class="text-slate-600 dark:text-slate-400 text-lg max-w-xl leading-relaxed"
+                        data-en="A collection of high-performance backend systems, mobile applications, and technical experiments focused on scalability and user experience."
+                        data-id="Koleksi sistem backend berkinerja tinggi, aplikasi mobile, dan eksperimen teknis yang berfokus pada skalabilitas dan pengalaman pengguna.">
+                        A collection of high-performance backend systems, mobile applications, and technical experiments
+                        focused on scalability and user experience.
+                    </p>
+                </div>
+                <!-- Projects Grid -->
+                <div class="flex flex-wrap items-center gap-3 mb-10">
+                    <button
+                        class="px-6 py-2 rounded-lg bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-all"
+                        data-en="All" data-filter="all" data-id="Semua">
+                        All
+                    </button>
+                    <button
+                        class="px-6 py-2 rounded-lg bg-transparent border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold hover:border-primary hover:text-primary transition-all"
+                        data-en="Website" data-filter="website" data-id="Situs Web">
+                        Website
+                    </button>
+                    <button
+                        class="px-6 py-2 rounded-lg bg-transparent border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold hover:border-primary hover:text-primary transition-all"
+                        data-en="Mobile" data-filter="mobile" data-id="Seluler">
+                        Mobile
+                    </button>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card 1 -->
+                    <div class="group flex flex-col bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300"
+                        data-category="website">
+                        <div class="aspect-video w-full bg-slate-100 dark:bg-slate-800 overflow-hidden relative">
+                            <div class="absolute inset-0 bg-cover  transition-transform duration-500 group-hover:scale-105"
+                                data-alt="AI data visualization dashboard with dark theme and blue accents"
+                                style="background-image: url('assets/libat.png');">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                                <a href="detail-porto/detail_libat.html"
+                                    class="text-white text-sm font-medium flex items-center gap-2">
+                                    Detail Libat <span class="material-symbols-outlined text-sm">bolt</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col gap-4">
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white"
+                                    data-en="Web Application 'LIBAT'" data-id="Web Aplikasi 'LIBAT'">Web Application
+                                    "LIBAT"
+                                </h3>
+                                <div class="flex gap-1">
+                                    <span
+                                        class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-500 dark:text-slate-400">WEB
+                                    </span>
+                                    <span
+                                        class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-500 dark:text-slate-400">ERP</span>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"
+                                data-en="A scalable ERP backend built with Laravel and MySQL, designed to handle maritime pilotage operations, featuring real-time data processing, automated document generation (PDF & Excel), and seamless XML SOAP API integration with government systems"
+                                data-id="Sistem ERP berbasis Laravel dan MySQL yang scalable, dirancang untuk mendukung operasional pemanduan kapal dengan pemrosesan data real-time, pembuatan dokumen otomatis (PDF & Excel), serta integrasi XML SOAP dengan sistem pemerintah">
+                                A scalable ERP backend built with Laravel and MySQL, designed to handle maritime
+                                pilotage operations, featuring real-time data processing, automated document generation
+                                (PDF & Excel), and seamless XML SOAP API integration with government systems
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Laravel</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">MySQL</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">XML
+                                    SOAP API</span>
+
+                            </div>
+                            <a class="mt-4 inline-flex items-center text-primary font-bold text-sm group/link"
+                                href="detail-porto/detail_libat.html"><span data-en="Detail" data-id="Detail">Detail
+                                    Study</span><span
+                                    class="material-symbols-outlined ml-1 text-base transition-transform group-hover/link:translate-x-1">chevron_right</span></a>
+                        </div>
+                    </div>
+                    <!-- Project Card 2 -->
+                    <div class="group flex flex-col bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300"
+                        data-category="website">
+                        <div class="aspect-video w-full bg-slate-100 dark:bg-slate-800 overflow-hidden relative">
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                data-alt="Digital banking mobile application screens with data visualization charts"
+                                style="background-image: url('/assets/sppas.png');">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                                <a href="detail-porto/detail_sppas.html"
+                                    class="text-white text-sm font-medium flex items-center gap-2">
+                                    App Store Demo <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col gap-4">
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white"
+                                    data-en="Pelita Air Trade Union" data-id="Serikat Kerja Pelita Air (SPPAS)">Pelita
+                                    Air Trade Union
+                                </h3>
+                                <div class="flex gap-2">
+                                    <span
+                                        class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-500 dark:text-slate-400">WEB</span>
+                                    <span
+                                        class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-500 dark:text-slate-400">ERP
+                                        & Landing Page</span>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"
+                                data-en="A Laravel and MySQL based application designed to support labor union operations digitally, featuring member reporting, event management, financial transparency, PDF document generation, as well as email notification integration and Excel-based data processing using templates"
+                                data-id="Aplikasi berbasis Laravel dan MySQL yang dirancang untuk mendukung operasional serikat pekerja secara digital, dengan fitur pelaporan anggota, manajemen event, transparansi keuangan, generate dokumen PDF, serta integrasi notifikasi email dan pengolahan data berbasis template Excel">
+                                A Laravel and MySQL based application designed to support labor union operations
+                                digitally, featuring member reporting, event management, financial transparency, PDF
+                                document generation, as well as email notification integration and Excel-based data
+                                processing using templates
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Laravel</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">MySQL</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Email
+                                    Notif Link</span>
+                                <!-- <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Stripe</span> -->
+                            </div>
+                            <a class="mt-4 inline-flex items-center text-primary font-bold text-sm group/link"
+                                href="detail-porto/detail_sppas.html"><span data-en="Detail" data-id="Detail">Detail
+                                    Study</span><span
+                                    class="material-symbols-outlined ml-1 text-base transition-transform group-hover/link:translate-x-1">chevron_right</span></a>
+                        </div>
+                    </div>
+                    <!-- Project Card 3 -->
+                    <div class="group flex flex-col bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300"
+                        data-category="website">
+                        <div class="aspect-video w-full bg-slate-100 dark:bg-slate-800 overflow-hidden relative">
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                data-alt="AI data visualization dashboard with dark theme and blue accents"
+                                style="background-image: url('/assets/web-profile-ibnusina.png');">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                                <a href="detail-porto/detail_webprof_ibnusina.html"
+                                    class="text-white text-sm font-medium flex items-center gap-2">
+                                    Live Dashboard <span class="material-symbols-outlined text-sm">bolt</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col gap-4">
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white"
+                                    data-en="Web Profile Clinic Ibnu Sina" data-id="Web Profile Klinik Ibnu Sina">Web
+                                    Profile Clinic Ibnu Sina</h3>
+                                <div class="flex gap-2">
+
+                                    <span
+                                        class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-500 dark:text-slate-400">Web</span>
+                                    <span
+                                        class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-500 dark:text-slate-400">Landing
+                                        Page</span>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"
+                                data-en="Real-time analytics platform leveraging OpenAI models to process large datasets and provide actionable business intelligence visualizations."
+                                data-id="Platform analitik real-time yang memanfaatkan model OpenAI untuk memproses kumpulan data besar dan menyediakan visualisasi intelijen bisnis yang dapat ditindaklanjuti.">
+                                Real-time analytics platform leveraging OpenAI models to process large datasets and
+                                provide actionable business intelligence visualizations.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Laravel</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Bootsrap</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">MySQL</span>
+
+                            </div>
+                            <a class="mt-4 inline-flex items-center text-primary font-bold text-sm group/link"
+                                href="detail-porto/detail_webprof_ibnusina.html"><span data-en="Detail"
+                                    data-id="Detail">Detail
+                                    Study</span><span
+                                    class="material-symbols-outlined ml-1 text-base transition-transform group-hover/link:translate-x-1">chevron_right</span></a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 4 -->
+                    <div class="group flex flex-col bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300"
+                        data-category="website">
+                        <div class="aspect-video w-full bg-slate-100 dark:bg-slate-800 overflow-hidden relative">
+                            <div class="absolute inset-0 bg-cover  transition-transform duration-500 group-hover:scale-105"
+                                data-alt="AI data visualization dashboard with dark theme and blue accents"
+                                style="background-image: url('/assets/mcu.png');">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                                <span class="text-white text-sm font-medium flex items-center gap-2">
+                                    Live Dashboard <span class="material-symbols-outlined text-sm">bolt</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col gap-4">
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white"
+                                    data-en="Web Profile Clinic Ibnu Sina" data-id="Web Profile Klinik Ibnu Sina">Mcu
+                                    Clinic Ibnu Sina</h3>
+                                <div class="flex gap-2">
+
+                                    <span
+                                        class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-500 dark:text-slate-400">Web</span>
+                                    <span
+                                        class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-500 dark:text-slate-400">ERP</span>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"
+                                data-en="Real-time analytics platform leveraging OpenAI models to process large datasets and provide actionable business intelligence visualizations."
+                                data-id="Platform analitik real-time yang memanfaatkan model OpenAI untuk memproses kumpulan data besar dan menyediakan visualisasi intelijen bisnis yang dapat ditindaklanjuti.">
+                                Real-time analytics platform leveraging OpenAI models to process large datasets and
+                                provide actionable business intelligence visualizations.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Laravel</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Bootsrap</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">MySQL</span>
+
+                            </div>
+                            <a class="mt-4 inline-flex items-center text-primary font-bold text-sm group/link"
+                                href="#"><span data-en="Detail" data-id="Detail">Detail
+                                    Study</span><span
+                                    class="material-symbols-outlined ml-1 text-base transition-transform group-hover/link:translate-x-1">chevron_right</span></a>
+                        </div>
+                    </div>
+                    <!-- Project Card 5 -->
+                    <div class="group flex flex-col bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300"
+                        data-category="website">
+                        <div class="aspect-video w-full bg-slate-100 dark:bg-slate-800 overflow-hidden relative">
+                            <div class="absolute inset-0 bg-cover  transition-transform duration-500 group-hover:scale-105"
+                                data-alt="AI data visualization dashboard with dark theme and blue accents"
+                                style="background-image: url('/assets/profcom-bat.png');">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                                <span class="text-white text-sm font-medium flex items-center gap-2">
+                                    Live Dashboard <span class="material-symbols-outlined text-sm">bolt</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col gap-4">
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white"
+                                    data-en="Profile Company PT. Biru Arnawama Timur"
+                                    data-id="Web Profile Perusahaan PT. Biru Arnawama">
+                                    Profile Company PT. Biru Arnawama Timur</h3>
+                                <div class="flex gap-2">
+
+                                    <span
+                                        class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-500 dark:text-slate-400">Web</span>
+                                    <span
+                                        class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-500 dark:text-slate-400">Landing
+                                        Page</span>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"
+                                data-en="Real-time analytics platform leveraging OpenAI models to process large datasets and provide actionable business intelligence visualizations."
+                                data-id="Platform analitik real-time yang memanfaatkan model OpenAI untuk memproses kumpulan data besar dan menyediakan visualisasi intelijen bisnis yang dapat ditindaklanjuti.">
+                                Real-time analytics platform leveraging OpenAI models to process large datasets and
+                                provide actionable business intelligence visualizations.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Laravel</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Bootsrap</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">MySQL</span>
+
+                            </div>
+                            <a class="mt-4 inline-flex items-center text-primary font-bold text-sm group/link"
+                                href="#"><span data-en="Detail" data-id="Detail">Detail
+                                    Study</span><span
+                                    class="material-symbols-outlined ml-1 text-base transition-transform group-hover/link:translate-x-1">chevron_right</span></a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 6 -->
+                    <div class="group flex flex-col bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300"
+                        data-category="website">
+                        <div class="aspect-video w-full bg-slate-100 dark:bg-slate-800 overflow-hidden relative">
+                            <div class="absolute inset-0 bg-cover  transition-transform duration-500 group-hover:scale-105"
+                                data-alt="AI data visualization dashboard with dark theme and blue accents"
+                                style="background-image: url('/assets/rumkit-lanud.png');">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                                <span class="text-white text-sm font-medium flex items-center gap-2">
+                                    Live Dashboard <span class="material-symbols-outlined text-sm">bolt</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col gap-4">
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white"
+                                    data-en="Hospital Lanud Dhomber Queue Management System"
+                                    data-id="Sistem Manajemen Antrian Rumah Sakit Lanud Dhomber">
+                                    Hospital Lanud Dhomber Queue Management System </h3>
+                                <div class="flex gap-2">
+
+                                    <span
+                                        class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-500 dark:text-slate-400">Web</span>
+                                    <span
+                                        class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-500 dark:text-slate-400">Landing
+                                        Page</span>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"
+                                data-en="Real-time analytics platform leveraging OpenAI models to process large datasets and provide actionable business intelligence visualizations."
+                                data-id="Platform analitik real-time yang memanfaatkan model OpenAI untuk memproses kumpulan data besar dan menyediakan visualisasi intelijen bisnis yang dapat ditindaklanjuti.">
+                                Real-time analytics platform leveraging OpenAI models to process large datasets and
+                                provide actionable business intelligence visualizations.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Laravel</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Bootsrap</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">MySQL</span>
+
+                            </div>
+                            <a class="mt-4 inline-flex items-center text-primary font-bold text-sm group/link"
+                                href="#"><span data-en="Detail" data-id="Detail">Detail
+                                    Study</span><span
+                                    class="material-symbols-outlined ml-1 text-base transition-transform group-hover/link:translate-x-1">chevron_right</span></a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 7 -->
+                    <div class="group flex flex-col bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300"
+                        data-category="website">
+                        <div class="aspect-video w-full bg-slate-100 dark:bg-slate-800 overflow-hidden relative">
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                data-alt="AI data visualization dashboard with dark theme and blue accents"
+                                style="background-image: url('/assets/profcom-lib.png');">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                                <span class="text-white text-sm font-medium flex items-center gap-2">
+                                    Live Dashboard <span class="material-symbols-outlined text-sm">bolt</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col gap-4">
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white"
+                                    data-en="Profile Company PT. Lintas Internasional Berkarya"
+                                    data-id="Web Profile Perusahaan PT. Lintas Internasional Berkarya">
+                                    Profile Company PT. Lintas Internasional Berkarya</h3>
+                                <div class="flex gap-2">
+
+                                    <span
+                                        class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-500 dark:text-slate-400">Web</span>
+                                    <span
+                                        class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-500 dark:text-slate-400">Landing
+                                        Page</span>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"
+                                data-en="Real-time analytics platform leveraging OpenAI models to process large datasets and provide actionable business intelligence visualizations."
+                                data-id="Platform analitik real-time yang memanfaatkan model OpenAI untuk memproses kumpulan data besar dan menyediakan visualisasi intelijen bisnis yang dapat ditindaklanjuti.">
+                                Real-time analytics platform leveraging OpenAI models to process large datasets and
+                                provide actionable business intelligence visualizations.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Laravel</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Bootsrap</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">MySQL</span>
+
+                            </div>
+                            <a class="mt-4 inline-flex items-center text-primary font-bold text-sm group/link"
+                                href="#"><span data-en="Detail" data-id="Detail">Detail
+                                    Study</span><span
+                                    class="material-symbols-outlined ml-1 text-base transition-transform group-hover/link:translate-x-1">chevron_right</span></a>
+                        </div>
+                    </div>
+                    <!-- Project Card 8 -->
+                    <div class="group flex flex-col bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300"
+                        data-category="mobile">
+                        <div class="aspect-video w-full bg-slate-100 dark:bg-slate-800 overflow-hidden relative">
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                data-alt="Fitness tracker app showing workout progress and health stats"
+                                style="background-image: url('assets/midtrans2.png');">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                                <span class="text-white text-sm font-medium flex items-center gap-2">
+                                    Project Details <span class="material-symbols-outlined text-sm">visibility</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col gap-4">
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white"
+                                    data-en="Thesis project: School tuition (SPP) payment application integrated with Midtrans (Payment Gateway)"
+                                    data-id="Skripsi Project Aplikasi Pembayaran Spp Sekolah Dengan Midtrans (Payment Gateway)">
+                                    Thesis
+                                    project: School tuition (SPP) payment application integrated with Midtrans (Payment
+                                    Gateway)</h3>
+                                <div class="flex gap-2">
+                                    <span
+                                        class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-500 dark:text-slate-400">Mobile</span>
+                                    <span
+                                        class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-500 dark:text-slate-400">Midtrans</span>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"
+                                data-en="A cross-platform health monitoring application that synchronizes with wearable devices to track activity, sleep, and nutrition."
+                                data-id="Aplikasi pemantauan kesehatan lintas platform yang sinkron dengan perangkat yang dapat dikenakan untuk melacak aktivitas, tidur, dan nutrisi.">
+                                A cross-platform health monitoring application that synchronizes with wearable devices
+                                to track activity, sleep, and nutrition.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Flutter</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Payment
+                                    Gateway</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Rest
+                                    API</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">MySql</span>
+                            </div>
+                            <a class="mt-4 inline-flex items-center text-primary font-bold text-sm group/link"
+                                href="#"><span data-en="Detail" data-id="Detail">Detail
+                                    Study</span><span
+                                    class="material-symbols-outlined ml-1 text-base transition-transform group-hover/link:translate-x-1">chevron_right</span></a>
+                        </div>
+                    </div>
+
+                    <div class="group flex flex-col bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300"
+                        data-category="mobile">
+                        <div class="aspect-video w-full bg-slate-100 dark:bg-slate-800 overflow-hidden relative">
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                data-alt="Fitness tracker app showing workout progress and health stats"
+                                style="background-image: url('assets/hrd-mob.png');">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                                <span class="text-white text-sm font-medium flex items-center gap-2">
+                                    Project Details <span class="material-symbols-outlined text-sm">visibility</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col gap-4">
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white"
+                                    data-en="Employee Attendance Application for PT. Lintas Internasional Berkarya"
+                                    data-id="Aplikasi Absensi Karyawan PT. Lintas Internasional Berkarya">
+                                    Employee Attendance Application for PT. Lintas Internasional Berkarya</h3>
+                                <div class="flex gap-2">
+                                    <span
+                                        class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-500 dark:text-slate-400">Mobile</span>
+                                    <span
+                                        class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-500 dark:text-slate-400">API</span>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"
+                                data-en="A cross-platform health monitoring application that synchronizes with wearable devices to track activity, sleep, and nutrition."
+                                data-id="Aplikasi pemantauan kesehatan lintas platform yang sinkron dengan perangkat yang dapat dikenakan untuk melacak aktivitas, tidur, dan nutrisi.">
+                                A cross-platform health monitoring application that synchronizes with wearable devices
+                                to track activity, sleep, and nutrition.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Flutter</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">Rest
+                                    API</span>
+                                <span
+                                    class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">MySql</span>
+                            </div>
+                            <a class="mt-4 inline-flex items-center text-primary font-bold text-sm group/link"
+                                href="#"><span data-en="Detail" data-id="Detail">Detail
+                                    Study</span><span
+                                    class="material-symbols-outlined ml-1 text-base transition-transform group-hover/link:translate-x-1">chevron_right</span></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Call to Action -->
+                <div
+                    class="mt-24 p-8 md:p-12 rounded-2xl bg-gradient-to-br from-primary/20 via-primary/5 to-transparent border border-primary/20 flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="text-center md:text-left">
+                        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-2"
+                            data-en="Interested in a collaboration?" data-id="Tertarik untuk berkolaborasi?">Interested
+                            in a collaboration?</h2>
+                        <p class="text-slate-600 dark:text-slate-400 text-base"
+                            data-en="I'm currently available for new projects and engineering roles."
+                            data-id="Saya saat ini tersedia untuk proyek baru dan peran rekayasa.">I'm currently
+                            available for new projects and engineering roles.</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+                        <button
+                            class="flex-1 min-w-[160px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform"
+                            data-en="Let's Chat" data-id="Mari Mengobrol">
+                            Let's Chat
+                        </button>
+                        <button
+                            class="flex-1 min-w-[160px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-transparent border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                            data-en="More Projects" data-id="Lebih Banyak Proyek">
+                            More Projects
+                        </button>
+                    </div>
+                </div>
+            </main>
+            <!-- Footer -->
+            <footer
+                class="border-t border-slate-200 dark:border-slate-800 py-10 px-6 lg:px-20 bg-white dark:bg-background-dark/50">
+                <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div class="flex items-center gap-3 opacity-70">
+                        <div class="size-5 text-primary">
+                            <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+                            </svg>
+                        </div>
+                        <span class="text-sm font-medium" data-en="© 2024 Nur Huda. Built with precision."
+                            data-id="© 2024 Nur Huda. Dibangun dengan presisi.">© 2024 Nur Huda. Built with
+                            precision.</span>
+                    </div>
+                    <div class="flex gap-6">
+                        <a class="text-slate-500 hover:text-primary transition-colors" href="#">
+                            <span class="material-symbols-outlined">link</span>
+                        </a>
+                        <a class="text-slate-500 hover:text-primary transition-colors" href="#">
+                            <span class="material-symbols-outlined">alternate_email</span>
+                        </a>
+                        <a class="text-slate-500 hover:text-primary transition-colors" href="#">
+                            <span class="material-symbols-outlined">terminal</span>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script>
+        const filterButtons = document.querySelectorAll('[data-filter]');
+        const projectCards = document.querySelectorAll('[data-category]');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('bg-primary', 'text-white', 'shadow-lg', 'shadow-primary/20');
+                    btn.classList.add('bg-transparent', 'border', 'border-slate-200', 'dark:border-slate-800', 'text-slate-600', 'dark:text-slate-400');
+                });
+                button.classList.add('bg-primary', 'text-white', 'shadow-lg', 'shadow-primary/20');
+                button.classList.remove('bg-transparent', 'border', 'border-slate-200', 'dark:border-slate-800', 'text-slate-600', 'dark:text-slate-400');
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Language Toggle Logic
+        const langToggle = document.getElementById('lang-toggle');
+        let currentLang = 'en';
+
+        langToggle.addEventListener('click', () => {
+
+            currentLang = currentLang === 'en' ? 'id' : 'en';
+
+            // ubah teks tombol
+            langToggle.textContent = currentLang === 'en'
+                ? 'UBAH BAHASA INDONESIA'
+                : 'CHANGE TO ENGLISH';
+
+            document.querySelectorAll('[data-en][data-id]').forEach(el => {
+                el.textContent = el.getAttribute(`data-${currentLang}`);
+            });
+
+        });
+    </script>
+</body>
+
+</html>
