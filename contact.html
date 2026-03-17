@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0da6f2",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <title>Contact Nur Huda</title>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <!-- Contact Section -->
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <header
+                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-6 md:px-10 py-4 max-w-7xl mx-auto w-full">
+                <div class="flex items-center gap-3">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined text-3xl">terminal</span>
+                    </div>
+                    <h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">Nur
+                        Huda</h2>
+                </div>
+                <div class="flex flex-1 justify-end gap-8">
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a class="text-primary text-sm font-semibold underline underline-offset-8 decoration-2"
+                            href="index.html">Home</a>
+                        <a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors"
+                            href="about.html">About</a>
+                        <a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors"
+                            href="portofilio.html">Projects</a>
+                        <a class="text-primary text-sm font-semibold underline underline-offset-8 decoration-2"
+                            href="contact.html">Contact</a>
+                    </nav>
+                    <button
+                        class="flex items-center justify-center rounded-lg h-10 px-3 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold hover:border-primary hover:text-primary transition-all mr-2"
+                        id="lang-toggle">UBAH BAHASA INDONESIA</button>
+
+                    <!-- <button
+                        class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold tracking-wide shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+                        <span>Hire Me</span>
+                    </button> -->
+                </div>
+            </header>
+            <div class="flex-1 max-w-6xl mx-auto w-full px-6 py-12 lg:py-20">
+                <div class="mb-8">
+                    <h2
+                        class="text-3xl md:text-4xl font-bold leading-tight tracking-[-0.015em] mb-4 text-slate-900 dark:text-white">
+                        Get in Touch</h2>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="relative flex h-3 w-3">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+                        </span>
+                        <p class="text-primary font-medium">Available for freelance and full-time opportunities.</p>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-normal max-w-xl">
+                        Have a project in mind or just want to say hi? Feel free to reach out. I'm always open to
+                        discussing new projects, creative ideas or opportunities to be part of your visions.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+                    <!-- Form Area -->
+                    <div
+                        class="md:col-span-8 bg-slate-200/50 dark:bg-primary/5 p-6 md:p-8 rounded-xl border border-slate-300/50 dark:border-primary/10">
+                        <form action="#" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="flex flex-col gap-2">
+                                    <label
+                                        class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Name</label>
+                                    <input
+                                        class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-background-dark/50 p-4 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary transition-colors outline-none"
+                                        placeholder="Your Name" type="text" />
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <label
+                                        class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Email</label>
+                                    <input
+                                        class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-background-dark/50 p-4 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary transition-colors outline-none"
+                                        placeholder="your@email.com" type="email" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label
+                                    class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Message</label>
+                                <textarea
+                                    class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-background-dark/50 p-4 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary transition-colors outline-none resize-none"
+                                    placeholder="Tell me about your project..." rows="5"></textarea>
+                            </div>
+                            <button
+                                class="w-full md:w-auto min-w-[180px] bg-primary hover:bg-primary/90 text-white font-bold py-4 px-8 rounded-lg transition-all transform active:scale-95 flex items-center justify-center gap-2">
+                                <span>Send Message</span>
+                                <span class="material-symbols-outlined text-[20px]">send</span>
+                            </button>
+                        </form>
+                    </div>
+                    <!-- Contact Info / Sidebar -->
+                    <div class="md:col-span-4 flex flex-col gap-8">
+                        <div>
+                            <h4 class="text-lg font-bold mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">location_on</span>
+                                Location
+                            </h4>
+                            <div
+                                class="rounded-xl overflow-hidden grayscale contrast-125 mb-3 h-32 border border-slate-300 dark:border-slate-700">
+                                <img class="w-full h-full object-cover"
+                                    data-alt="Simplified map view of Balikpapan Indonesia" data-location="Balikpapan"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD92DeERwzwSHmzRJ6wsJks4ZG4VnhbCPIXTUXPAQ-EzWURF2X1L79l28UGLLie-QkLDUkOxJ2eFGLIWSMgqLNotH_YXiLCOFkeVL0gXCkQlv7RCEEDhDrZkqZ1UUpiPOpf6YKe8wTG_W1Rszsoz-72gQC16hSlEyvbMnz_tHJuZmETkdX91beau7_iSJv5avjYIT1QNbcp9ht5fw5DlMoOyzEltZmiWgZ_ZYMlflpIoIaruQZgQ_WemkqOzP7HF7oJkbcbdgYTzwQ" />
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400">Balikpapan, East Kalimantan<br />Indonesia</p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">alternate_email</span>
+                                Socials
+                            </h4>
+                            <div class="flex flex-col gap-3">
+                                <a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors flex items-center gap-2"
+                                    href="#">
+                                    <span
+                                        class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+                                        <i class="material-symbols-outlined text-sm">link</i>
+                                    </span>
+                                    LinkedIn
+                                </a>
+                                <a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors flex items-center gap-2"
+                                    href="#">
+                                    <span
+                                        class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+                                        <i class="material-symbols-outlined text-sm">code</i>
+                                    </span>
+                                    GitHub
+                                </a>
+                                <a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors flex items-center gap-2"
+                                    href="#">
+                                    <span
+                                        class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+                                        <i class="material-symbols-outlined text-sm">photo_camera</i>
+                                    </span>
+                                    Instagram
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+        <!-- Footer -->
+        <footer
+            class="border-t border-slate-200 dark:border-slate-800 py-10 px-6 lg:px-20 bg-white dark:bg-background-dark/50">
+            <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3 opacity-70">
+                    <div class="size-5 text-primary">
+                        <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                    <span class="text-sm font-medium" data-en="© 2024 Nur Huda. Built with precision."
+                        data-id="© 2024 Nur Huda. Dibangun dengan presisi.">© 2026 Nur Huda. Built with
+                        precision.</span>
+                </div>
+                <div class="flex gap-6">
+                    <a class="text-slate-500 hover:text-primary transition-colors" href="#">
+                        <span class="material-symbols-outlined">link</span>
+                    </a>
+                    <a class="text-slate-500 hover:text-primary transition-colors" href="#">
+                        <span class="material-symbols-outlined">alternate_email</span>
+                    </a>
+                    <a class="text-slate-500 hover:text-primary transition-colors" href="#">
+                        <span class="material-symbols-outlined">terminal</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+</body>
+
+</html>
